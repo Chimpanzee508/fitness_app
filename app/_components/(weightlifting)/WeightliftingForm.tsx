@@ -1,57 +1,31 @@
-import { useState } from 'react'
+import { logWorkout } from '@/app/api/actions'
 
-export default function Weightlifting_Form() {
-    const [workout, setWorkout] = useState('')
-    const [sets, setSets] = useState('')
-    const [reps, setReps] = useState('')
-    const [weight, setWeight] = useState('')
-
-    function handleRepChange(e: React.ChangeEvent<HTMLInputElement>) {
-        setReps(e.target.value)
-    }
-
-    function handleWorkoutInput(e: React.ChangeEvent<HTMLInputElement>) {
-        setWorkout(e.target.value)
-    }
-
-    function handleSetChange(e: React.ChangeEvent<HTMLInputElement>) {
-        setSets(e.target.value)
-    }
-
-    function handleWeightChange(e: React.ChangeEvent<HTMLInputElement>) {
-        setWeight(e.target.value)
-    }
-
-    function handleLog(e: React.MouseEvent<HTMLButtonElement>) {
-        e.preventDefault()
-        alert('logged')
-    }
-
+export default function WeightliftingForm() {
+    
     return (
         <section>
-            <form>
+            <form action={logWorkout}>
                 <h1>Log Sheet</h1>
                 <hr />
 
                 <label htmlFor='workout'>workout: </label>
-                <input onChange={handleWorkoutInput}
+                <input 
                     type='text' name='workout' 
-                    placeholder='workout' value={workout} />
+                    placeholder='workout' />
 
                 <label htmlFor='sets'>sets: </label>
                 <input type='number' name='sets'
-                    value={sets} onChange={handleSetChange}
                     placeholder='how many?' />
 
                 <label htmlFor='reps'>reps: </label>
-                <input type='number' placeholder='how many?'
-                        value={reps} onChange={handleRepChange} />
+                <input type='number' name='reps'
+                    placeholder='how many?' />
                 
                 <label htmlFor='weight'>weight: </label>
-                <input type='number' placeholder='how much?'
-                        value={weight} onChange={handleWeightChange} />
+                <input type='number' name='weight'
+                    placeholder='how much?' />
 
-                <button onClick={handleLog}>log</button>
+                <button type='submit'>log</button>
             </form>
         </section>
     )

@@ -1,5 +1,5 @@
-'use client'
 import WeightliftingButton from "./_components/(weightlifting)/WeightliftingButton"
+import WeightliftingList from "./_components/(weightlifting)/WeightliftingList"
 
 
 export default function Home() {
@@ -7,7 +7,9 @@ export default function Home() {
         <section>
             <ul>
                 <li>
-                    <WeightliftingButton />
+                    <WeightliftingButton>
+                        <WeightliftingList />
+                    </WeightliftingButton>
                 </li>
             </ul>
         </section>
