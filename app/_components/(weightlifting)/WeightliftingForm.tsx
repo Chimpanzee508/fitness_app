@@ -6,7 +6,6 @@ export default function WeightliftingForm() {
         <section>
             <form action={logWorkout}>
                 <h1>Log Sheet</h1>
-                <hr />
 
                 <label htmlFor='workout'>workout: </label>
                 <input 
@@ -24,6 +23,13 @@ export default function WeightliftingForm() {
                 <label htmlFor='weight'>weight: </label>
                 <input type='number' name='weight'
                     placeholder='how much?' />
+
+                <div>
+                    <label htmlFor='lbs'>lbs: </label>
+                    <input type='radio' id='lbs' name='metric' value='lbs' defaultChecked />
+                    <label htmlFor='kg'>kg: </label>
+                    <input type='radio' id='kg' name='metric' value='kg' />
+                </div>
 
                 <button type='submit'>log</button>
             </form>

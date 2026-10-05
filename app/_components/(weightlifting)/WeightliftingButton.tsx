@@ -17,12 +17,10 @@ export default function WeightliftingButton({
     return (
         <section>
             <button onClick={toggle_weightlifting_button}>
-                {visible ? 'hide' : 'weightlifting'}
+                {visible ? 'hide' : 'Weight Lifting'}
             </button>
-            {!visible && <p>click the button to log your weightlifting workouts</p>}
             {visible && <WeightliftingForm />}
-            {visible && <hr />}
-            {visible &&children}
+            {visible && children}
         </section>
     )
 }

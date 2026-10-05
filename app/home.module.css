@@ -1,0 +1,7 @@
+.nav {
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    gap: 20%;
+    flex-wrap: wrap;
+}
